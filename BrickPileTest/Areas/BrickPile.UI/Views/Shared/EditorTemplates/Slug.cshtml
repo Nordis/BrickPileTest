@@ -1,0 +1,10 @@
+﻿
+@model String
+@{
+    var rootModel = ViewData["RootModel"] as BrickPile.Domain.Models.IPageModel;
+}           
+@if (rootModel == null) {
+    @Html.TextBoxFor(_ => Model, new { disabled = "disabled" })
+} else {
+    @Html.TextBoxFor(_ => Model, new { @class = "slug" })
+}

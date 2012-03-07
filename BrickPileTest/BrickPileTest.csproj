@@ -1,0 +1,712 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{00EC16A6-E5E4-4892-A0AE-0C0CF212400C}</ProjectGuid>
+    <ProjectTypeGuids>{E53F8FEA-EAE0-44A6-8774-FFD645390401};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BrickPileTest</RootNamespace>
+    <AssemblyName>BrickPileTest</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>false</UseIISExpress>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\BrickPileTest\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AjaxMin">
+      <HintPath>..\packages\AjaxMin.4.13.4076.28499\lib\AjaxMin.dll</HintPath>
+    </Reference>
+    <Reference Include="AsyncCtpLibrary">
+      <HintPath>..\packages\RavenDB-Embedded.1.0.701\lib\net40\AsyncCtpLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="BouncyCastle.Crypto">
+      <HintPath>..\packages\RavenDB-Embedded.1.0.701\lib\net40\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="BrickPile.Core">
+      <HintPath>..\packages\BrickPile.0.3.0.89\lib\BrickPile.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="BrickPile.Domain">
+      <HintPath>..\packages\BrickPile.0.3.0.89\lib\BrickPile.Domain.dll</HintPath>
+    </Reference>
+    <Reference Include="BrickPile.UI">
+      <HintPath>..\packages\BrickPile.0.3.0.89\lib\BrickPile.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="dotless.Core">
+      <HintPath>..\packages\dotless.1.1.0\lib\dotless.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="EcmaScript.NET.modified">
+      <HintPath>..\packages\YUICompressor.NET.1.5.0.0\lib\NET35\EcmaScript.NET.modified.dll</HintPath>
+    </Reference>
+    <Reference Include="Esent.Interop">
+      <HintPath>..\packages\RavenDB-Embedded.1.0.701\lib\net40\Esent.Interop.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.NRefactory">
+      <HintPath>..\packages\RavenDB-Embedded.1.0.701\lib\net40\ICSharpCode.NRefactory.dll</HintPath>
+    </Reference>
+    <Reference Include="Lucene.Net">
+      <HintPath>..\packages\RavenDB-Embedded.1.0.701\lib\net40\Lucene.Net.dll</HintPath>
+    </Reference>
+    <Reference Include="Lucene.Net.Contrib.Spatial">
+      <HintPath>..\packages\RavenDB-Embedded.1.0.701\lib\net40\Lucene.Net.Contrib.Spatial.dll</HintPath>
+    </Reference>
+    <Reference Include="Lucene.Net.Contrib.SpellChecker">
+      <HintPath>..\packages\RavenDB-Embedded.1.0.701\lib\net40\Lucene.Net.Contrib.SpellChecker.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.4.0.8\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="NLog">
+      <HintPath>..\packages\NLog.2.0.0.2000\lib\net40\NLog.dll</HintPath>
+    </Reference>
+    <Reference Include="Raven.Abstractions">
+      <HintPath>..\packages\RavenDB-Embedded.1.0.701\lib\net40\Raven.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Raven.Client.Embedded">
+      <HintPath>..\packages\RavenDB-Embedded.1.0.701\lib\net40\Raven.Client.Embedded.dll</HintPath>
+    </Reference>
+    <Reference Include="Raven.Client.Lightweight">
+      <HintPath>..\packages\RavenDB-Embedded.1.0.701\lib\net40\Raven.Client.Lightweight.dll</HintPath>
+    </Reference>
+    <Reference Include="Raven.Client.MvcIntegration">
+      <HintPath>..\packages\RavenDB-Embedded.1.0.701\lib\net40\Raven.Client.MvcIntegration.dll</HintPath>
+    </Reference>
+    <Reference Include="Raven.Database">
+      <HintPath>..\packages\RavenDB-Embedded.1.0.701\lib\net40\Raven.Database.dll</HintPath>
+    </Reference>
+    <Reference Include="Raven.Munin">
+      <HintPath>..\packages\RavenDB-Embedded.1.0.701\lib\net40\Raven.Munin.dll</HintPath>
+    </Reference>
+    <Reference Include="Raven.Storage.Esent">
+      <HintPath>..\packages\RavenDB-Embedded.1.0.701\lib\net40\Raven.Storage.Esent.dll</HintPath>
+    </Reference>
+    <Reference Include="Raven.Storage.Managed">
+      <HintPath>..\packages\RavenDB-Embedded.1.0.701\lib\net40\Raven.Storage.Managed.dll</HintPath>
+    </Reference>
+    <Reference Include="SquishIt.Framework">
+      <HintPath>..\packages\SquishIt.0.7.1\lib\SquishIt.Framework.dll</HintPath>
+    </Reference>
+    <Reference Include="StructureMap">
+      <HintPath>..\packages\structuremap.2.6.3\lib\StructureMap.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Web.Mvc, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Web.WebPages" />
+    <Reference Include="System.Web.Helpers" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="WebActivator">
+      <HintPath>..\packages\WebActivator.1.4.4\lib\net40\WebActivator.dll</HintPath>
+    </Reference>
+    <Reference Include="Yahoo.Yui.Compressor">
+      <HintPath>..\packages\YUICompressor.NET.1.5.0.0\lib\NET35\Yahoo.Yui.Compressor.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Data\Plugins\BrickPile.Raven.Plugins.dll" />
+    <Content Include="Areas\BrickPile.UI\Images\add.png" />
+    <Content Include="Areas\BrickPile.UI\Images\button.png" />
+    <Content Include="Areas\BrickPile.UI\Images\dark-wood.jpg" />
+    <Content Include="Areas\BrickPile.UI\Images\delete.png" />
+    <Content Include="Areas\BrickPile.UI\Images\deleted.png" />
+    <Content Include="Areas\BrickPile.UI\Images\dialog-close.png" />
+    <Content Include="Areas\BrickPile.UI\Images\dialog-top.png" />
+    <Content Include="Areas\BrickPile.UI\Images\edit.png" />
+    <Content Include="Areas\BrickPile.UI\Images\form-bg.png" />
+    <Content Include="Areas\BrickPile.UI\Images\gradient-overflow.png" />
+    <Content Include="Areas\BrickPile.UI\Images\gradient.png" />
+    <Content Include="Areas\BrickPile.UI\Images\header.png" />
+    <Content Include="Areas\BrickPile.UI\Images\html-bg.png" />
+    <Content Include="Areas\BrickPile.UI\Images\jquery.selectBox-arrow.png" />
+    <Content Include="Areas\BrickPile.UI\Images\logo.png" />
+    <Content Include="Areas\BrickPile.UI\Images\metadata-bg.png" />
+    <Content Include="Areas\BrickPile.UI\Images\next-level.png" />
+    <Content Include="Areas\BrickPile.UI\Images\perm-delete.png" />
+    <Content Include="Areas\BrickPile.UI\Images\required.png" />
+    <Content Include="Areas\BrickPile.UI\Images\selected-bg.png" />
+    <Content Include="Areas\BrickPile.UI\Images\Setup\alert.png" />
+    <Content Include="Areas\BrickPile.UI\Images\Setup\arrow.png" />
+    <Content Include="Areas\BrickPile.UI\Images\Setup\bg.png" />
+    <Content Include="Areas\BrickPile.UI\Images\Setup\line.png" />
+    <Content Include="Areas\BrickPile.UI\Images\Setup\logo.png" />
+    <Content Include="Areas\BrickPile.UI\Images\Setup\password-error.png" />
+    <Content Include="Areas\BrickPile.UI\Images\Setup\plate.png" />
+    <Content Include="Areas\BrickPile.UI\Images\Setup\submit-bg.png" />
+    <Content Include="Areas\BrickPile.UI\Images\sort.png" />
+    <Content Include="Areas\BrickPile.UI\Images\sprite.png" />
+    <Content Include="Areas\BrickPile.UI\Images\submit-bg.png" />
+    <Content Include="Areas\BrickPile.UI\Images\undo.png" />
+    <Content Include="Areas\BrickPile.UI\Images\wood.jpg" />
+    <Content Include="Areas\BrickPile.UI\Scripts\dashboard.js" />
+    <Content Include="Areas\BrickPile.UI\Scripts\jquery-1.7.1-vsdoc.js" />
+    <Content Include="Areas\BrickPile.UI\Scripts\jquery-1.7.1.js" />
+    <Content Include="Areas\BrickPile.UI\Scripts\jquery-1.7.1.min.js" />
+    <Content Include="Areas\BrickPile.UI\Scripts\jquery-ui-1.8.16.custom.js" />
+    <Content Include="Areas\BrickPile.UI\Scripts\jquery-ui-1.8.16.custom.min.js" />
+    <Content Include="Areas\BrickPile.UI\Scripts\jquery-ui-1.8.16.js" />
+    <Content Include="Areas\BrickPile.UI\Scripts\jquery-ui-1.8.16.min.js" />
+    <Content Include="Areas\BrickPile.UI\Scripts\jQuery.lionbars.0.2.1.min.js" />
+    <Content Include="Areas\BrickPile.UI\Scripts\jquery.selectbox.js" />
+    <Content Include="Areas\BrickPile.UI\Scripts\jquery.selectBox.min.js" />
+    <Content Include="Areas\BrickPile.UI\Scripts\jquery.slugify.js" />
+    <Content Include="Areas\BrickPile.UI\Scripts\setup.js" />
+    <Content Include="Areas\BrickPile.UI\Scripts\start.js" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\langs\en.js" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\license.txt" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\plugins\advhr\css\advhr.css" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\plugins\advhr\editor_plugin.js" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\plugins\advhr\editor_plugin_src.js" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\plugins\advhr\js\rule.js" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\plugins\advhr\langs\en_dlg.js" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\plugins\advhr\rule.htm" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\plugins\advimage\css\advimage.css" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\plugins\advimage\editor_plugin.js" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\plugins\advimage\editor_plugin_src.js" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\plugins\advimage\image.htm" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\plugins\advimage\img\sample.gif" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\plugins\advimage\js\image.js" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\plugins\advimage\langs\en_dlg.js" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\plugins\advlink\css\advlink.css" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\plugins\advlink\editor_plugin.js" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\plugins\advlink\editor_plugin_src.js" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\plugins\advlink\js\advlink.js" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\plugins\advlink\langs\en_dlg.js" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\plugins\advlink\link.htm" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\plugins\advlist\editor_plugin.js" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\plugins\advlist\editor_plugin_src.js" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\plugins\autolink\editor_plugin.js" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\plugins\autolink\editor_plugin_src.js" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\plugins\autoresize\editor_plugin.js" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\plugins\autoresize\editor_plugin_src.js" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\plugins\autosave\editor_plugin.js" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\plugins\autosave\editor_plugin_src.js" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\plugins\autosave\langs\en.js" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\plugins\bbcode\editor_plugin.js" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\plugins\bbcode\editor_plugin_src.js" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\plugins\contextmenu\editor_plugin.js" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\plugins\contextmenu\editor_plugin_src.js" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\plugins\directionality\editor_plugin.js" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\plugins\directionality\editor_plugin_src.js" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\plugins\emotions\editor_plugin.js" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\plugins\emotions\editor_plugin_src.js" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\plugins\emotions\emotions.htm" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\plugins\emotions\img\smiley-cool.gif" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\plugins\emotions\img\smiley-cry.gif" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\plugins\emotions\img\smiley-embarassed.gif" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\plugins\emotions\img\smiley-foot-in-mouth.gif" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\plugins\emotions\img\smiley-frown.gif" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\plugins\emotions\img\smiley-innocent.gif" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\plugins\emotions\img\smiley-kiss.gif" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\plugins\emotions\img\smiley-laughing.gif" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\plugins\emotions\img\smiley-money-mouth.gif" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\plugins\emotions\img\smiley-sealed.gif" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\plugins\emotions\img\smiley-smile.gif" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\plugins\emotions\img\smiley-surprised.gif" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\plugins\emotions\img\smiley-tongue-out.gif" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\plugins\emotions\img\smiley-undecided.gif" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\plugins\emotions\img\smiley-wink.gif" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\plugins\emotions\img\smiley-yell.gif" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\plugins\emotions\js\emotions.js" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\plugins\emotions\langs\en_dlg.js" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\plugins\example\dialog.htm" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\plugins\example\editor_plugin.js" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\plugins\example\editor_plugin_src.js" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\plugins\example\img\example.gif" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\plugins\example\js\dialog.js" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\plugins\example\langs\en.js" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\plugins\example\langs\en_dlg.js" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\plugins\example_dependency\editor_plugin.js" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\plugins\example_dependency\editor_plugin_src.js" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\plugins\fullpage\css\fullpage.css" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\plugins\fullpage\editor_plugin.js" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\plugins\fullpage\editor_plugin_src.js" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\plugins\fullpage\fullpage.htm" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\plugins\fullpage\js\fullpage.js" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\plugins\fullpage\langs\en_dlg.js" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\plugins\fullscreen\editor_plugin.js" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\plugins\fullscreen\editor_plugin_src.js" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\plugins\fullscreen\fullscreen.htm" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\plugins\iespell\editor_plugin.js" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\plugins\iespell\editor_plugin_src.js" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\plugins\inlinepopups\editor_plugin.js" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\plugins\inlinepopups\editor_plugin_src.js" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\plugins\inlinepopups\skins\clearlooks2\img\alert.gif" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\plugins\inlinepopups\skins\clearlooks2\img\button.gif" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\plugins\inlinepopups\skins\clearlooks2\img\buttons.gif" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\plugins\inlinepopups\skins\clearlooks2\img\confirm.gif" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\plugins\inlinepopups\skins\clearlooks2\img\corners.gif" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\plugins\inlinepopups\skins\clearlooks2\img\horizontal.gif" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\plugins\inlinepopups\skins\clearlooks2\img\vertical.gif" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\plugins\inlinepopups\skins\clearlooks2\window.css" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\plugins\inlinepopups\template.htm" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\plugins\insertdatetime\editor_plugin.js" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\plugins\insertdatetime\editor_plugin_src.js" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\plugins\layer\editor_plugin.js" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\plugins\layer\editor_plugin_src.js" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\plugins\legacyoutput\editor_plugin.js" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\plugins\legacyoutput\editor_plugin_src.js" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\plugins\lists\editor_plugin.js" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\plugins\lists\editor_plugin_src.js" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\plugins\media\css\media.css" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\plugins\media\editor_plugin.js" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\plugins\media\editor_plugin_src.js" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\plugins\media\js\embed.js" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\plugins\media\js\media.js" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\plugins\media\langs\en_dlg.js" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\plugins\media\media.htm" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\plugins\media\moxieplayer.swf" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\plugins\nonbreaking\editor_plugin.js" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\plugins\nonbreaking\editor_plugin_src.js" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\plugins\noneditable\editor_plugin.js" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\plugins\noneditable\editor_plugin_src.js" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\plugins\pagebreak\editor_plugin.js" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\plugins\pagebreak\editor_plugin_src.js" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\plugins\paste\editor_plugin.js" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\plugins\paste\editor_plugin_src.js" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\plugins\paste\js\pastetext.js" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\plugins\paste\js\pasteword.js" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\plugins\paste\langs\en_dlg.js" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\plugins\paste\pastetext.htm" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\plugins\paste\pasteword.htm" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\plugins\preview\editor_plugin.js" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\plugins\preview\editor_plugin_src.js" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\plugins\preview\example.html" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\plugins\preview\jscripts\embed.js" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\plugins\preview\preview.html" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\plugins\print\editor_plugin.js" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\plugins\print\editor_plugin_src.js" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\plugins\save\editor_plugin.js" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\plugins\save\editor_plugin_src.js" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\plugins\searchreplace\css\searchreplace.css" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\plugins\searchreplace\editor_plugin.js" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\plugins\searchreplace\editor_plugin_src.js" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\plugins\searchreplace\js\searchreplace.js" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\plugins\searchreplace\langs\en_dlg.js" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\plugins\searchreplace\searchreplace.htm" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\plugins\spellchecker\css\content.css" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\plugins\spellchecker\editor_plugin.js" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\plugins\spellchecker\editor_plugin_src.js" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\plugins\spellchecker\img\wline.gif" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\plugins\style\css\props.css" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\plugins\style\editor_plugin.js" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\plugins\style\editor_plugin_src.js" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\plugins\style\js\props.js" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\plugins\style\langs\en_dlg.js" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\plugins\style\props.htm" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\plugins\tabfocus\editor_plugin.js" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\plugins\tabfocus\editor_plugin_src.js" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\plugins\table\cell.htm" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\plugins\table\css\cell.css" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\plugins\table\css\row.css" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\plugins\table\css\table.css" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\plugins\table\editor_plugin.js" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\plugins\table\editor_plugin_src.js" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\plugins\table\js\cell.js" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\plugins\table\js\merge_cells.js" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\plugins\table\js\row.js" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\plugins\table\js\table.js" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\plugins\table\langs\en_dlg.js" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\plugins\table\merge_cells.htm" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\plugins\table\row.htm" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\plugins\table\table.htm" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\plugins\template\blank.htm" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\plugins\template\css\template.css" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\plugins\template\editor_plugin.js" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\plugins\template\editor_plugin_src.js" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\plugins\template\js\template.js" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\plugins\template\langs\en_dlg.js" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\plugins\template\template.htm" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\plugins\visualchars\editor_plugin.js" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\plugins\visualchars\editor_plugin_src.js" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\plugins\wordcount\editor_plugin.js" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\plugins\wordcount\editor_plugin_src.js" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\plugins\xhtmlxtras\abbr.htm" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\plugins\xhtmlxtras\acronym.htm" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\plugins\xhtmlxtras\attributes.htm" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\plugins\xhtmlxtras\cite.htm" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\plugins\xhtmlxtras\css\attributes.css" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\plugins\xhtmlxtras\css\popup.css" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\plugins\xhtmlxtras\del.htm" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\plugins\xhtmlxtras\editor_plugin.js" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\plugins\xhtmlxtras\editor_plugin_src.js" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\plugins\xhtmlxtras\ins.htm" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\plugins\xhtmlxtras\js\abbr.js" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\plugins\xhtmlxtras\js\acronym.js" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\plugins\xhtmlxtras\js\attributes.js" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\plugins\xhtmlxtras\js\cite.js" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\plugins\xhtmlxtras\js\del.js" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\plugins\xhtmlxtras\js\element_common.js" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\plugins\xhtmlxtras\js\ins.js" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\plugins\xhtmlxtras\langs\en_dlg.js" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\themes\advanced\about.htm" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\themes\advanced\anchor.htm" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\themes\advanced\charmap.htm" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\themes\advanced\color_picker.htm" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\themes\advanced\editor_template.js" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\themes\advanced\editor_template_src.js" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\themes\advanced\image.htm" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\themes\advanced\img\colorpicker.jpg" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\themes\advanced\img\flash.gif" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\themes\advanced\img\icons.gif" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\themes\advanced\img\iframe.gif" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\themes\advanced\img\pagebreak.gif" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\themes\advanced\img\quicktime.gif" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\themes\advanced\img\realmedia.gif" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\themes\advanced\img\shockwave.gif" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\themes\advanced\img\trans.gif" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\themes\advanced\img\video.gif" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\themes\advanced\img\windowsmedia.gif" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\themes\advanced\js\about.js" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\themes\advanced\js\anchor.js" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\themes\advanced\js\charmap.js" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\themes\advanced\js\color_picker.js" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\themes\advanced\js\image.js" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\themes\advanced\js\link.js" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\themes\advanced\js\source_editor.js" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\themes\advanced\langs\en.js" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\themes\advanced\langs\en_dlg.js" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\themes\advanced\link.htm" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\themes\advanced\shortcuts.htm" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\themes\advanced\skins\cirkuit\content.css" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\themes\advanced\skins\cirkuit\dialog.css" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\themes\advanced\skins\cirkuit\img\butt2.png" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\themes\advanced\skins\cirkuit\img\button-bg.png" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\themes\advanced\skins\cirkuit\img\buttons.png" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\themes\advanced\skins\cirkuit\img\down_arrow.gif" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\themes\advanced\skins\cirkuit\img\fade-butt.png" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\themes\advanced\skins\cirkuit\img\icons.png" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\themes\advanced\skins\cirkuit\img\items.gif" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\themes\advanced\skins\cirkuit\img\menu-arrow.png" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\themes\advanced\skins\cirkuit\img\menu-check.png" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\themes\advanced\skins\cirkuit\img\progress.gif" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\themes\advanced\skins\cirkuit\img\tabs.gif" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\themes\advanced\skins\cirkuit\img\toolbarbg.png" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\themes\advanced\skins\cirkuit\ui.css" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\themes\advanced\skins\default\content.css" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\themes\advanced\skins\default\dialog.css" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\themes\advanced\skins\default\img\buttons.png" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\themes\advanced\skins\default\img\items.gif" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\themes\advanced\skins\default\img\menu_arrow.gif" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\themes\advanced\skins\default\img\menu_check.gif" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\themes\advanced\skins\default\img\progress.gif" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\themes\advanced\skins\default\img\tabs.gif" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\themes\advanced\skins\default\ui.css" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\themes\advanced\skins\highcontrast\content.css" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\themes\advanced\skins\highcontrast\dialog.css" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\themes\advanced\skins\highcontrast\ui.css" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\themes\advanced\skins\o2k7\content.css" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\themes\advanced\skins\o2k7\dialog.css" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\themes\advanced\skins\o2k7\img\button_bg.png" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\themes\advanced\skins\o2k7\img\button_bg_black.png" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\themes\advanced\skins\o2k7\img\button_bg_silver.png" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\themes\advanced\skins\o2k7\ui.css" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\themes\advanced\skins\o2k7\ui_black.css" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\themes\advanced\skins\o2k7\ui_silver.css" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\themes\advanced\source_editor.htm" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\themes\simple\editor_template.js" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\themes\simple\editor_template_src.js" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\themes\simple\img\icons.gif" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\themes\simple\langs\en.js" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\themes\simple\skins\default\content.css" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\themes\simple\skins\default\ui.css" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\themes\simple\skins\o2k7\content.css" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\themes\simple\skins\o2k7\img\button_bg.png" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\themes\simple\skins\o2k7\ui.css" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\tiny_mce.js" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\tiny_mce_popup.js" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\tiny_mce_src.js" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\utils\editable_selects.js" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\utils\form_utils.js" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\utils\mctabs.js" />
+    <Content Include="Areas\BrickPile.UI\Scripts\tinymce.3.4.5\utils\validate.js" />
+    <Content Include="Areas\BrickPile.UI\Styles\Dashboard.css" />
+    <Content Include="Areas\BrickPile.UI\Styles\Framework.css" />
+    <Content Include="Areas\BrickPile.UI\Styles\lionbars.css" />
+    <Content Include="Areas\BrickPile.UI\Styles\PartialViews.css" />
+    <Content Include="Areas\BrickPile.UI\Styles\Views.css" />
+    <Content Include="Areas\BrickPile.UI\Styles\webfonts\svg\museo-sans-500.svg" />
+    <Content Include="Areas\BrickPile.UI\Styles\webfonts\svg\museo-sans-700.svg" />
+    <Content Include="Areas\BrickPile.UI\Styles\webfonts\svg\style_159303.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Content\themes\base\jquery-ui.css" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Scripts\jquery-1.4.4.js" />
+    <Content Include="Scripts\jquery-1.4.4.min.js" />
+    <Content Include="Scripts\jquery-1.4.4-vsdoc.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery-ui.js" />
+    <Content Include="Scripts\jquery-ui.min.js" />
+    <Content Include="Scripts\MicrosoftAjax.js" />
+    <Content Include="Scripts\MicrosoftAjax.debug.js" />
+    <Content Include="Scripts\MicrosoftMvcAjax.js" />
+    <Content Include="Scripts\MicrosoftMvcAjax.debug.js" />
+    <Content Include="Scripts\MicrosoftMvcValidation.js" />
+    <Content Include="Scripts\MicrosoftMvcValidation.debug.js" />
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Controllers\" />
+    <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\BrickPile.UI\Views\Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\BrickPile.UI\Views\Shared\Error.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\BrickPile.UI\Views\Shared\EditorTemplates\Url.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\BrickPile.UI\Views\Shared\EditorTemplates\Time.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\BrickPile.UI\Views\Shared\EditorTemplates\String.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\BrickPile.UI\Views\Shared\EditorTemplates\Slug.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\BrickPile.UI\Views\Shared\EditorTemplates\Range.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\BrickPile.UI\Views\Shared\EditorTemplates\PhoneNumber.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\BrickPile.UI\Views\Shared\EditorTemplates\Password.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\BrickPile.UI\Views\Shared\EditorTemplates\PageName.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\BrickPile.UI\Views\Shared\EditorTemplates\Object.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\BrickPile.UI\Views\Shared\EditorTemplates\Number.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\BrickPile.UI\Views\Shared\EditorTemplates\MultilineText.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\BrickPile.UI\Views\Shared\EditorTemplates\ModelReference.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\BrickPile.UI\Views\Shared\EditorTemplates\ImageUrl.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\BrickPile.UI\Views\Shared\EditorTemplates\Html.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\BrickPile.UI\Views\Shared\EditorTemplates\EmailAddress.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\BrickPile.UI\Views\Shared\EditorTemplates\Duration.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\BrickPile.UI\Views\Shared\EditorTemplates\DropDown.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\BrickPile.UI\Views\Shared\EditorTemplates\Decimal.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\BrickPile.UI\Views\Shared\EditorTemplates\DateTime.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\BrickPile.UI\Views\Shared\EditorTemplates\Date.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\BrickPile.UI\Views\Shared\EditorTemplates\Currency.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\BrickPile.UI\Views\Shared\_Layout.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\BrickPile.UI\Views\Setup\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\BrickPile.UI\Views\Settings\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\BrickPile.UI\Views\Library\Save.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\BrickPile.UI\Views\Library\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\BrickPile.UI\Views\Library\_FileBrowser.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\BrickPile.UI\Views\Dialog\EditModelReference.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\BrickPile.UI\Views\Dialog\_Menu.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\BrickPile.UI\Views\Dashboard\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\BrickPile.UI\Views\Content\Start.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\BrickPile.UI\Views\Content\New.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\BrickPile.UI\Views\Content\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\BrickPile.UI\Views\Content\Growl.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\BrickPile.UI\Views\Content\Edit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\BrickPile.UI\Views\Content\Add.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\BrickPile.UI\Views\Account\Register.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\BrickPile.UI\Views\Account\ManageUsers.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\BrickPile.UI\Views\Account\ManageRoles.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\BrickPile.UI\Views\Account\LogOn.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\BrickPile.UI\Views\Account\EditUser.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\BrickPile.UI\Views\Account\ChangePasswordSuccess.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\BrickPile.UI\Views\Account\ChangePassword.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\BrickPile.UI\Views\_ViewStart.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Areas\BrickPile.UI\Styles\webfonts\eot\felttip-roman.eot" />
+    <None Include="Areas\BrickPile.UI\Styles\webfonts\eot\museo-sans-500.eot" />
+    <None Include="Areas\BrickPile.UI\Styles\webfonts\eot\museo-sans-700.eot" />
+    <None Include="Areas\BrickPile.UI\Styles\webfonts\ttf\felttip-roman.ttf" />
+    <None Include="Areas\BrickPile.UI\Styles\webfonts\ttf\museo-sans-500.ttf" />
+    <None Include="Areas\BrickPile.UI\Styles\webfonts\ttf\museo-sans-700.ttf" />
+    <None Include="Areas\BrickPile.UI\Styles\webfonts\woff\felttip-roman.woff" />
+    <None Include="Areas\BrickPile.UI\Styles\webfonts\woff\museo-sans-500.woff" />
+    <None Include="Areas\BrickPile.UI\Styles\webfonts\woff\museo-sans-700.woff" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>30053</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Import Project="$(SolutionDir)\.nuget\nuget.targets" />
+</Project>
